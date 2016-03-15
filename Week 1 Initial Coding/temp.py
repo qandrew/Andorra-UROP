@@ -1,8 +1,8 @@
-aList = [123, 'xyz', 'zara', 'abc', 'xyz'];
+c = {1:3, 4:6}
 
-aList.sort();
-print aList
+print 1 in c.keys()
 
-a = [3,2,4,4]
-a.sort()
-print a
+file_name = list('../data_commons/cdrs/DWFET_CDR_CELLID_201501.csv')
+file_name[-5] = 3
+file_name = str(file_name)
+print file_name

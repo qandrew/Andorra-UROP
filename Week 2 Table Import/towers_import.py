@@ -18,3 +18,5 @@ with open('towers_id_dict.csv', 'rb') as csvfile:
 			towers_id[int(data[0])] = int(data[1])
 		except ValueError:
 			pass
+
+print towers_id
