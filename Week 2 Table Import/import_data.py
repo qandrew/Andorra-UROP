@@ -1,11 +1,8 @@
 # March 4 2016
-# Andrew Xia importing Data for Andorra Media Lab UROP
-# input: DWFET_CDR_CELLID_201501.csv. 
-# we want day, city, hour, cell phone tower (and others also)
 
 
 import os
-import csv 
+import csv
 print 'started'
 
 # print os.getcwd()
@@ -40,9 +37,11 @@ for i in xrange(1,10):
 		for row in spamreader:
 			# if i >= 50: #run only subset of table when testing
 			# 	break
+			if i%50000 == 0:
+				print 'got to', i
 			i += 1
-			if row[0] not in people_data.keys() and i > 1: #not a duplicate
-				if int(row[6]) in towers_id.keys():  #do this to factor in duplicate towers
+			if row[0] not in people_data and i > 1: #not a duplicate
+				if int(row[6]) in towers_id:  #do this to factor in duplicate towers
 					tower = towers_id[int(row[6])]
 					# print 'changed', row[6], 'to', tower
 				else:
@@ -56,7 +55,7 @@ for i in xrange(1,10):
 	print 'number of people', len(people_data)
 
 	# removing column head (if it gets imported)
-	if 'DS_CDNUMORIGEN' in people_data.keys():
+	if 'DS_CDNUMORIGEN' in people_data:
 		del people_data['DS_CDNUMORIGEN'] #don't need column name
 
 	print 'exporting', file_name[-10:]

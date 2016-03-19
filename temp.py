@@ -6,6 +6,8 @@
 rocks = [[3,0],[3,2],[0,4]]
 print [0,5] in rocks
 
+print [] == False
+
 
 
 
